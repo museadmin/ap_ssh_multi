@@ -1,0 +1,30 @@
+
+bundle exec rake install
+gem inabox -o pkg/app_ssh_multi-0.1.0.gem
+
+=================================================
+1 - Actions:
+        ActionApSshMultiSetup
+            Create hosts table
+            Create cnxns table - name, state
+        ActionCreateConnections
+            Payload json lists servers, user, port etc
+        ActionLoadHostList
+            Payload json is loaded into db hosts table
+        ActionMonitorConnections
+
+2 - Read a file containing all known hosts into hosts table
+
+
+
+=================================================
+SSH Setup
+
+1 - Created ssh key (mac_rsa)
+2 - Copied to host's authorized keys file
+3 - ssh-add on client
+4 - Should then be able to ssh to remote servers without password
+=================================================
+
+=================================================
+

@@ -35,8 +35,11 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
+  spec.add_runtime_dependency 'ap_message_io', '~> 0.1.0'
   spec.add_runtime_dependency 'bundler', '~> 1.16'
-  spec.add_runtime_dependency 'minitest', '~> 5.0'
+  spec.add_runtime_dependency 'minitest', '~> 5.10.1'
   spec.add_runtime_dependency 'net-ssh-multi', '~> 1.2', '>= 1.2.1'
-  spec.add_runtime_dependency 'rake', '~> 10.0'
+  spec.add_runtime_dependency 'rake', '~> 0'
+  spec.add_runtime_dependency 'state-machine', '~> 0.1.4'
+  spec.add_runtime_dependency 'yard', '~> 0.9.12'
 end
