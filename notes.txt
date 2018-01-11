@@ -1,6 +1,6 @@
 
 bundle exec rake install
-gem inabox -o pkg/app_ssh_multi-0.1.0.gem
+gem inabox -o pkg/ap_ssh_multi-0.1.0.gem
 
 =================================================
 1 - Actions:

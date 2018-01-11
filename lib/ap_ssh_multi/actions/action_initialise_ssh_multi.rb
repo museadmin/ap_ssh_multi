@@ -39,7 +39,6 @@ class ActionInitialiseSshMulti < ParentAction
 
   # Create the hosts table in the DB if it hasn't been
   # created by another action pack.
-  # TODO: If it does exist then need to verify is as expected
   def create_hosts_table
     execute_sql_statement("CREATE TABLE IF NOT EXISTS hosts (\n" \
       "   hostname CHAR PRIMARY KEY, -- Hostname of server \n" \

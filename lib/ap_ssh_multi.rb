@@ -7,6 +7,10 @@ class ApSshMulti
   # Relative path to our actions
   ACTIONS_DIR = '/lib/ap_ssh_multi/actions'.freeze
 
+  def initialize(**args)
+    export_action_pack(args) unless args.empty?
+  end
+
   # Export the actions from this pack into a state machine
   def export_action_pack(args)
     root = File.expand_path('../..', __FILE__)
