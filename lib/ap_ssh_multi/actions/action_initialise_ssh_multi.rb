@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'state/actions/parent_action'
 require 'fileutils'
 
@@ -48,11 +50,19 @@ class ActionInitialiseSshMulti < ParentAction
       ");".strip)
   end
 
-  # If hosts table exists already, check that minimum fields are present
+  # If hosts table exists already, check that required fields are present
+  # This is not really a great check as someone might set a constraint
+  # on an unknown field in the 3rd party hosts table found...
   def validate_hosts_table
+    cols = { hostname: false,
+             short_name: false,
+             ip_address: false,
+             host_group: false }
     execute_sql_query('PRAGMA table_info(\'hosts\');').each do |row|
-      raise 'invalid hosts table found' unless
-          %w[hostname short_name ip_address host_group].include?(row[1])
+      cols.each_key do |k|
+        cols[k] = true if k.to_s == row[1]
+      end
     end
+    raise 'Invalid hosts table' if cols.value?(false)
   end
 end

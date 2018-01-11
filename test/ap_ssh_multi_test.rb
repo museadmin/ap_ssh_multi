@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 require 'ap_message_io'
 require 'ap_message_io/helpers/message_builder'
 require 'eventmachine'
 
+# Unit tests for the ssh multi action pack
 class ApSshMultiTest < Minitest::Test
   def test_that_it_has_a_version_number
     refute_nil ::ApSshMulti::VERSION

@@ -6,7 +6,6 @@ gem inabox -o pkg/ap_ssh_multi-0.1.0.gem
 1 - Actions:
         ActionApSshMultiSetup
             Create hosts table
-            Create cnxns table - name, state
         ActionCreateConnections
             Payload json lists servers, user, port etc
         ActionLoadHostList
